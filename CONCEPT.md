@@ -1,4 +1,4 @@
-# Horoscope.api
+# Horoscope today
 
 ## Team Members
 
