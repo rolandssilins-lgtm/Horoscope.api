@@ -1,0 +1,2 @@
+# Horoscope.api
+Daily horoscope
