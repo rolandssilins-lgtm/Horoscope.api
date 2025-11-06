@@ -24,4 +24,7 @@
 
 project-name/
 └── CONCEPT.md
+└── index.html
 └── README.md
+└── script.js
+└── style.css

@@ -3,87 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
     <title>Horoscope App</title>
-
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: "Arial", sans-serif;
-        background: linear-gradient(180deg, #c7b8ff, #e8e6ff);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-      }
-
-      .app-container {
-        background: white;
-        width: 90%;
-        max-width: 450px; /* desktop */
-        padding: 25px;
-        border-radius: 16px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-      }
-
-      h1 {
-        text-align: center;
-        margin-bottom: 15px;
-        font-size: 26px;
-      }
-
-      label {
-        font-size: 16px;
-        font-weight: bold;
-      }
-
-      select,
-      button {
-        width: 100%;
-        padding: 12px;
-        font-size: 16px;
-        margin-top: 12px;
-        border-radius: 10px;
-        border: 1px solid #ccc;
-      }
-
-      button {
-        background: #6c63ff;
-        color: white;
-        border: none;
-        cursor: pointer;
-        font-weight: bold;
-        transition: 0.2s;
-      }
-
-      button:hover {
-        background: #5850d8;
-      }
-
-      #result {
-        background: #f7f7ff;
-        padding: 18px;
-        margin-top: 20px;
-        border-radius: 12px;
-        line-height: 1.5;
-      }
-
-      @media (max-width: 480px) {
-        h1 {
-          font-size: 22px;
-        }
-
-        select,
-        button {
-          font-size: 14px;
-          padding: 10px;
-        }
-
-        #result {
-          font-size: 14px;
-        }
-      }
-    </style>
   </head>
   <body>
     <div class="app-container">
@@ -110,26 +32,5 @@
 
       <div id="result"></div>
     </div>
-
-    <script>
-      async function getHoroscope() {
-        const sign = document.getElementById("sign").value;
-
-        const originalUrl = `https://horoscope-app-api.vercel.app/api/v1/get-horoscope/daily?sign=${sign}&day=TODAY`;
-        const proxyUrl = "https://corsproxy.io/?"; // A free, public proxy
-
-        // The new URL that goes through the proxy
-        const url = proxyUrl + encodeURIComponent(originalUrl);
-
-        const response = await fetch(url);
-        const textData = await response.text();
-        const data = JSON.parse(textData);
-
-        document.getElementById("result").innerHTML = `
-                <h3>${sign.toUpperCase()} — ${data.data.date}</h3>
-                <p>${data.data.horoscope_data}</p>
-            `;
-      }
-    </script>
   </body>
 </html>
