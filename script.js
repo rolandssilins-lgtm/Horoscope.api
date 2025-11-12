@@ -1,11 +1,38 @@
+function getSignClass(sign) {
+  return sign.toLowerCase();
+}
 async function getHoroscope() {
   const sign = document.getElementById("sign").value;
   const resultElement = document.getElementById("result");
+  //personalized styles:
+  const body = document.body;
+  const allSigns = [
+    "aries",
+    "taurus",
+    "gemini",
+    "cancer",
+    "leo",
+    "virgo",
+    "libra",
+    "scorpio",
+    "sagittarius",
+    "capricorn",
+    "aquarius",
+    "pisces",
+  ];
+
+  body.className = body.className
+    .split(" ")
+    .filter((c) => !allSigns.includes(c))
+    .join(" ");
+
   resultElement.innerHTML = `
   <div>"Fetching horoscope..."</div>
-   <div class="loader"></div> 
-
+  <div class="loader"></div> 
   `;
+
+  const signClass = getSignClass(sign);
+  body.classList.add(signClass);
 
   const originalUrl = `https://horoscope-app-api.vercel.app/api/v1/get-horoscope/daily?sign=${sign}&day=TODAY`;
   const proxyUrl = "https://corsproxy.io/?";
