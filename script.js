@@ -1,7 +1,11 @@
 async function getHoroscope() {
   const sign = document.getElementById("sign").value;
   const resultElement = document.getElementById("result");
-  resultElement.innerHTML = "Fetching horoscope...";
+  resultElement.innerHTML = `
+  <div>"Fetching horoscope..."</div>
+   <div class="loader"></div> 
+
+  `;
 
   const originalUrl = `https://horoscope-app-api.vercel.app/api/v1/get-horoscope/daily?sign=${sign}&day=TODAY`;
   const proxyUrl = "https://corsproxy.io/?";
