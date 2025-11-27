@@ -9,3 +9,5 @@ Team members:
 - Member 3 - [Rolands]
 
 API being used: Horoscope API
+
+Web page: https://rolandssilins-lgtm.github.io/Horoscope.api/
