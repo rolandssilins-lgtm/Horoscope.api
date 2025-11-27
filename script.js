@@ -34,6 +34,7 @@ async function getHoroscope() {
   const proxyUrl = "https://corsproxy.io/?";
   const url = proxyUrl + encodeURIComponent(originalUrl);
 
+  // for testing purposes with live server change originalUrl with url
   try {
     const response = await fetch(originalUrl);
 
