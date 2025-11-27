@@ -35,7 +35,7 @@ async function getHoroscope() {
   const url = proxyUrl + encodeURIComponent(originalUrl);
 
   try {
-    const response = await fetch(url);
+    const response = await fetch(originalUrl);
 
     // --- API Error Handling---
     if (!response.ok) {
