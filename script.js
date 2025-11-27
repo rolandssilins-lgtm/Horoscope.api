@@ -1,3 +1,6 @@
+function getSignClass(sign) {
+  return sign.toLowerCase();
+}
 async function getHoroscope() {
   const sign = document.getElementById("sign").value;
   const resultElement = document.getElementById("result");
@@ -28,7 +31,8 @@ async function getHoroscope() {
   <div class="loader"></div> 
   `;
 
-  body.classList.add(sign);
+  const signClass = getSignClass(sign);
+  body.classList.add(signClass);
 
   const originalUrl = `https://horoscope-app-api.vercel.app/api/v1/get-horoscope/daily?sign=${sign}&day=TODAY`;
   const proxyUrl = "https://corsproxy.io/?";
