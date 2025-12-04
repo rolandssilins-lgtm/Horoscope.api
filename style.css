@@ -7,6 +7,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  
 }
 
 .app-container {
@@ -94,62 +95,143 @@ button:hover {
   }
 }
 
+.dark-mode-button {
+  transition: 0.3s;
+  color: #ffffff;
+  border: none;
+}
+.dark-mode-button:hover {
+  background: #000000 ;
+}
+
+/* dark mode */
+.dark-mode {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.dark body {
+  background: linear-gradient(180deg, #19142e, #333339);
+  color: #e2e8f0; 
+}
+
+.dark .app-container {
+  background: #2d3748; 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); 
+}
+
+.dark select {
+  background: #4a5568; 
+  color: #e2e8f0;
+  border-color: #4a5568; 
+}
+
+.dark #result {
+  background: #2d3748;
+}
+.dark .dark-mode-button {
+  color: #ffffff;
+}
+
+.dark .dark-mode-button:hover {
+  background: #ffffff ;
+  color: #151515 ;
+}
+
+
+.dark body.aries {
+  background: linear-gradient(180deg, #3c1720, #45331d);
+}
+
+.dark body.taurus {
+  background: linear-gradient(180deg, #1b461c, #3f4b31);
+}
+
+.dark body.gemini {
+  background: linear-gradient(180deg, #312d07, #2b423b);
+}
+
+.dark body.cancer {
+  background: linear-gradient(180deg, #2b3d46, #585b49);
+}
+
+.dark body.leo {
+  background: linear-gradient(180deg, #522813, #641424);
+}
+
+.dark body.virgo {
+  background: linear-gradient(180deg, #404d35, #4e4830);
+}
+
+.dark body.libra {
+  background: linear-gradient(180deg, #415050, #433e3c, #463336);
+}
+
+.dark body.scorpio {
+  background: linear-gradient(180deg, #5d4037, #531639, #010734);
+}
+
+.dark body.sagittarius {
+  background: linear-gradient(180deg, #2f263f, #504221);
+}
+
+.dark body.capricorn {
+  background: linear-gradient(180deg, #3f3c2e, #005136, #00094b);
+}
+
+.dark body.aquarius {
+  background: linear-gradient(180deg, #42413a, #394647, #0b3830);
+}
+
+.dark body.pisces {
+  background: linear-gradient(180deg, #0f3d30, #2d452d, #514253);
+}
+
 body.aries {
   background: linear-gradient(180deg, #ff416c, #ffa83e);
-  color: #333;
 }
 
 body.taurus {
   background: linear-gradient(180deg, #3b983e, #d2fda1);
-  color: #333;
 }
 
 body.gemini {
   background: linear-gradient(180deg, #ffeb3b, #b3ffe8);
-  color: #333;
 }
 
 body.cancer {
   background: linear-gradient(180deg, #698da0, #eaeed4);
-  color: #333;
 }
 
 body.leo {
   background: linear-gradient(180deg, #ed6f31, #e24263);
-  color: #333;
 }
 
 body.virgo {
   background: linear-gradient(180deg, #667a54, #ddd8c5);
-  color: #333;
 }
 
 body.libra {
   background: linear-gradient(180deg, #b2ddde, #fbeae2, #ffb6c1);
-  color: #333;
 }
 
 body.scorpio {
   background: linear-gradient(180deg, #5d4037, #531639, #010734);
-  color: #333;
 }
 
 body.sagittarius {
   background: linear-gradient(180deg, #b696ed, #f5d078);
-  color: #333;
 }
 
 body.capricorn {
   background: linear-gradient(180deg, #fff4ba, #005136, #00094b);
-  color: #333;
 }
 
 body.aquarius {
   background: linear-gradient(180deg, #fffce1, #cbf9ff, #29d1b2);
-  color: #333;
 }
 
 body.pisces {
   background: linear-gradient(180deg, #27b089, #8cc38e, #e5b7ed);
-  color: #333;
 }

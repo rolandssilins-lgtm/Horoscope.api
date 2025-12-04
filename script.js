@@ -1,3 +1,41 @@
+//toggle dark mode
+document.addEventListener('DOMContentLoaded', () => {
+    const htmlElement = document.documentElement; 
+    const darkModeButton = document.querySelector('.dark-mode-button');
+
+    const storedPreference = localStorage.getItem('theme');
+  
+    if (storedPreference === 'dark' || (!storedPreference && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        htmlElement.classList.add('dark');
+    }
+
+    if (darkModeButton) {
+        darkModeButton.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            
+            const isDark = htmlElement.classList.contains('dark');
+            if (isDark) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+
+            updateDarkModeButton(isDark);
+        });
+        
+        updateDarkModeButton(htmlElement.classList.contains('dark'));
+    }
+    
+    function updateDarkModeButton(isDark) {
+        if (isDark) {
+            darkModeButton.textContent = '☀️';
+        } else {
+            darkModeButton.textContent = '🌙';
+        }
+    }
+});
+
+
 function getSignClass(sign) {
   return sign.toLowerCase();
 }
